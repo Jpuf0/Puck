@@ -1,7 +1,7 @@
 {
-  "name": "booba",
+  "name": "Puck",
   "version": "1.2.0",
-  "description": "Booba",
+  "description": "Puck",
   "main": "src/index.js",
   "license": "MIT",
   "scripts": {

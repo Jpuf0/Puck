@@ -2,17 +2,21 @@
   "name": "Puck",
   "version": "1.2.0",
   "description": "Puck",
-  "main": "src/index.js",
+  "main": "puck/main.js",
   "license": "MIT",
+  "author": "Jpuf#0001",
   "scripts": {
-    "start": "electron puck/main.js"
+    "start": "electron puck/main.js",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "dependencies": {
     "node-fetch": "^2.6.1",
     "ws": "^7.3.1"
   },
   "devDependencies": {
-    "electron": "^7.1.9"
+    "electron": "^7.1.9",
+    "electron-builder": "^22.10.5"
   },
   "browser": {
     "net": false,
@@ -22,5 +26,31 @@
     "electron": false,
     "register-scheme": false,
     "./src/transports/IPC.js": false
+  },
+  "build": {
+    "appId": "puck",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS"
+    }
   }
 }
